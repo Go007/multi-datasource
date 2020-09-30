@@ -17,5 +17,5 @@ SpringBoot + MyBatis Plus + MySql +Druid + JDK1.8
    * 由AOP自动控制数据源切换
    remark:以上设置的优先级由高到低
 3. 特别注意:因为这里使用了MyBatis Plus,假设目前有两个数据源db1,db2,AOP切面的包路径分别为
-   com.hong.service.db1和com.hong.service.db2,如果设置了db1为默认数据源,则需要在
-   com.hong.service.db1的service实现类中显示的声明任何业务方法,而不能直接调用MyBatis Plus提供好的模板方法(???)
+   com.hong.template1.service.db1和com.hong.service.db2,如果设置了db1为默认数据源,则需要在
+   com.hong.template1.service.db1的service实现类中显示的声明任何业务方法,而不能直接调用MyBatis Plus提供好的模板方法(???)

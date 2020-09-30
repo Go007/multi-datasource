@@ -8,6 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>multi-datasource-template1</module>
+        <module>multi-datasource-template2</module>
     </modules>
     <packaging>pom</packaging>
 
