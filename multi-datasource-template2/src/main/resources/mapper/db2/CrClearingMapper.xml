@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hong.template2.mapper.db2.CrClearingMapper">
+
+    <resultMap id="BaseResultMap" type="com.hong.template2.entity.CrClearingEntity">
+        <id column="serial_no" jdbcType="BIGINT" property="serialNo"/>
+        <result column="pact_no" jdbcType="VARCHAR" property="pactNo"/>
+        <result column="return_plan_serial_no" jdbcType="VARCHAR" property="returnPlanSerialNo"/>
+        <result column="project_no" jdbcType="VARCHAR" property="projectNo"/>
+        <result column="project_name" jdbcType="VARCHAR" property="projectName"/>
+        <result column="prdt_no" jdbcType="VARCHAR" property="prdtNo"/>
+        <result column="customer_no" jdbcType="VARCHAR" property="customerNo"/>
+        <result column="customer_name" jdbcType="VARCHAR" property="customerName"/>
+        <result column="term_no" jdbcType="INTEGER" property="termNo"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+        <result column="amount" jdbcType="DECIMAL" property="amount"/>
+        <result column="fee_item_group_no" jdbcType="VARCHAR" property="feeItemGroupNo"/>
+        <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
+        <result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
+        <result column="audit_status" jdbcType="VARCHAR" property="auditStatus"/>
+        <result column="need_transfer" jdbcType="VARCHAR" property="needTransfer"/>
+        <result column="result" jdbcType="VARCHAR" property="result"/>
+        <result column="process_instance_id" jdbcType="VARCHAR" property="processInstanceId"/>
+        <result column="audit_result" jdbcType="VARCHAR" property="auditResult"/>
+        <result column="audit_remark" jdbcType="VARCHAR" property="auditRemark"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="due_date" jdbcType="TIMESTAMP" property="dueDate"/>
+        <result column="repay_date" jdbcType="TIMESTAMP" property="repayDate"/>
+        <result column="clear_time" jdbcType="TIMESTAMP" property="clearTime"/>
+        <result column="repayment_trans_no" jdbcType="VARCHAR" property="repaymentTransNo"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    serial_no, pact_no, return_plan_serial_no, project_no, project_name, prdt_no,customer_no,
+    customer_name, term_no, `status`, amount, fee_item_group_no, start_time, end_time,
+    audit_status, need_transfer, `result`, process_instance_id, audit_result,
+    audit_remark, create_time, update_time,due_date,repay_date,clear_time,repayment_trans_no
+  </sql>
+
+    <select id="getOne" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from cr_clearing where serial_no = #{id}
+    </select>
+
+</mapper>
